@@ -1,0 +1,19 @@
+{
+  "name": "tomato-clock",
+  "version": "1.0.0",
+  "description": "a simple tomato-clock",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [
+    "electron",
+    "tomato-clock"
+  ],
+  "author": "well-he",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^11.2.1",
+    "electron-windows-notifications": "^3.0.8"
+  }
+}
