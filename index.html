@@ -4,26 +4,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <style>
+        body {
+            background-color: azure;
+        }
+
+        .el-main,
+        .el-footer {
+            margin: auto;
+            text-align: center;
+        }
+
+        .el-footer {
+            position: fixed;
+            bottom: 10px;
+        }
+
+        #clockCanvas {
+            margin-top: 10%;
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
-    <label for="time-input">输入您要设置的时间：<input type="time" name="time-input" id="time-input"></label>
+    <div id="app">
+        <el-container>
+            <el-main>
+                <el-row>
+                    <el-select v-model="during" placeholder="请设置时间">
+                        <el-option v-for="item in times" :key="item.value" :label="item.label" :value="item.value">
+                            <span style="float: left">{{ item.label }}</span>
+                        </el-option>
+                    </el-select>
 
-    <div id="time-container"></div>
-
-    <div class="btn-group">
-        <div class="work-group">
-            <button id="btn-start-work">开始工作</button>
-            <button id="btn-end-work">结束工作</button>
-        </div>
-        <div class="rest-group">
-            <button id="btn-etart-rest">开始休息</button>
-            <button id="btn-end-rest">结束休息</button>
-        </div>
+                </el-row>
+                <canvas id="clockCanvas" width="200" height="200"> </canvas>
+            </el-main>
+            <el-footer>
+                <el-row>
+                    <el-button size="medium" type="primary" @click="workStart">开始工作</el-button>
+                    <el-button size="medium" type="primary" @click="endstart">结束工作</el-button>
+                    <!-- <el-button size="medium" type="primary">开始休息</el-button>
+                    <el-button size="medium" type="primary">结束休息</el-button> -->
+                </el-row>
+            </el-footer>
+        </el-container>
     </div>
-
-
-    <script src="./renderer.js"></script>
 </body>
+<!-- import Vue before Element -->
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<!-- import JavaScript -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script src="./render/renderer.js"></script>
 
 </html>

@@ -1,7 +1,6 @@
 const {
     app,
     dialog,
-    Notification,
     BrowserWindow,
     ipcMain
 } = require('electron')
@@ -9,18 +8,20 @@ const {
 let win;
 app.on('ready', () => {
     win = new BrowserWindow({
-        width: 500,
-        height: 500,
+        width: 550,
+        height: 600,
+        resizable: false,
         webPreferences: {
             nodeIntegration: true
-        }
+        },
+        maximizable: false,
+        menuBarVisible: false,
     })
-
     win.loadFile('./index.html')
+    // win.loadFile('./demo.html')
 
     handleIPC();
 })
-
 
 function handleIPC() {
     ipcMain.handle('work-notification', async function () {
