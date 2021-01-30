@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="UTF-8">
@@ -16,14 +16,8 @@
             text-align: center;
         }
 
-        .el-footer {
-            position: fixed;
-            bottom: 10px;
-        }
-
         #clockCanvas {
             margin-top: 10%;
-            text-align: center;
         }
     </style>
 </head>
@@ -43,11 +37,10 @@
                 <canvas id="clockCanvas" width="200" height="200"> </canvas>
             </el-main>
             <el-footer>
+                <span>休息时间默认为5分钟！</span>
                 <el-row>
-                    <el-button size="medium" type="primary" @click="workStart">开始工作</el-button>
-                    <el-button size="medium" type="primary" @click="endstart">结束工作</el-button>
-                    <el-button size="medium" type="primary">开始休息</el-button>
-                    <el-button size="medium" type="primary">结束休息</el-button>
+                    <el-button type="primary" @click="workStart">开始工作</el-button>
+                    <el-button type="primary" @click="workEnd">结束工作</el-button>
                 </el-row>
             </el-footer>
         </el-container>
