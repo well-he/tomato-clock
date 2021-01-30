@@ -1,9 +1,6 @@
-# 作业
+# 基于Electron.js开发的简易番茄时钟
 
-1. 补充按钮操作 
-    1. 开始工作
-    2. 结束工作
-    3. 开始休息
-    4. 结束休息
-2. 完善UI
-3. 休息结束通知修改为可交互通知：继续休息5分钟 + 开始工作
+- yarn install / npm install
+
+- yarn start  / npm start
+
